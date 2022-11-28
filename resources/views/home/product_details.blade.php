@@ -21,20 +21,23 @@
         <link href="{{asset('home/css/style.css')}}" rel="stylesheet" />
         <!-- responsive style -->
         <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
+
+         <style type="text/css">
+            
+         </style>
+
     </head>
 
     <body>
-        <div class="hero_area">
-            @include('home.header')         
-        
-
-        <div class="col-sm-4 col-md-2 col-lg-2" style="margin: auto; width:50%; padding: 30px">
-            
-               <div class="img-box" >
-                  <img src="/product/{{$product->image}}" alt="">
+    @include('home.header') 
+        <div class="container" style=" margin-top: 100px;" >                            
+            <div class="row">
+               <div class="col-6">
+                  <img src="/product/{{$product->image}}"  style="width:250px;">
                </div>
-               <div class="detail-box">
-                  <h5>
+
+               <div class="col-6" >
+                  <h5 style="font-family: fantasy;">
                      {{$product->title}}
                   </h5>
 
@@ -58,23 +61,23 @@
                      </h6>
                   @endif
                 
-                  <h6>Product category: {{$product->category}}</h6>
-                  <h6>Product description: {{$product->description}}</h6>
-                  <h6>Quantity:{{$product->quantity}}</h6>
+                  <h6>Product category: <span style="font-family: cursive;">{{$product->category}}</span></h6>
+                  <h6>Product description: <span style="font-family: cursive;">{{$product->description}}</span></h6>
+                  <h6>Quantity: <span style="font-family: cursive;">{{$product->quantity}}</span></h6>
 
                   <form action="{{url('add_cart', $product->id)}}" method="POST">
                      @csrf
                      <div class="row">
                         <div class="col-md-4">
-                           <input type="number" name="quantity" value="1" min="1" style="width: 100px">
+                           <input type="number" name="quantity" value="1" min="1" style="width: 100%">
                         </div>
                         <div class="col-md-4">
                            <input type="submit" value="Add to cart">  
                         </div>
                      </div>                       
                   </form>
+               </div> 
 
-                </div>
             </div>            
         </div>
 

@@ -20,8 +20,8 @@
             background-color:skyblue;
         }
         .img_size{
-            width:180px;
-            height:100px;
+            width:150px;
+            height:150px;
         }
     </style>
 
@@ -44,7 +44,7 @@
                     </form>
                 </div>
 
-                <table class="table_dg">
+                <table class="table_dg table-bordered">
                     <tr class="th_dg">
                         <th>Name</th>
                         <th>Email</th>
