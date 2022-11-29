@@ -309,5 +309,11 @@ class HomeController extends Controller
         $product=product::where('title', 'LIKE', "%$search_text%")->orWhere('category', 'LIKE', "$search_text")->paginate(3);
         return view('home.all_product',compact('product','comment', 'reply'));
     }
+
+    public function contact()
+    {
+        return view('home.contact');
+        
+    }
     
 }
